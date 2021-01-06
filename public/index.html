@@ -10,6 +10,8 @@
   <script
     src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
 
+
+  <script src="./js/jquery.js"></script>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
   <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script> -->
@@ -17,7 +19,7 @@
 </head>
 
 
-<body>
+<body id="body">
   <noscript>2020</noscript>
   <div id="root"></div>
   <script>
@@ -28,8 +30,40 @@
       });
     };
   </script>
-
 </body>
 <script src="./js/snow.js"></script>
+
+
+<script type="text/javascript">
+  /* 鼠标特效 */
+  var a_idx = 0;
+  jQuery(document).ready(function ($) {
+    $("body").click(function (e) {
+      var a = new Array("❤", "❤", "❤", "❤", "❤", "❤", "❤", "❤", "❤", "❤", "❤", "❤");
+      var $i = $("<span></span>").text(a[a_idx]);
+      a_idx = (a_idx + 1) % a.length;
+      var x = e.pageX,
+        y = e.pageY;
+      $i.css({
+        "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+        "top": y - 20,
+        "left": x,
+        "position": "absolute",
+        "font-weight": "bold",
+        "color": "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+      });
+      $("body").append($i);
+      $i.animate({
+        "top": y - 180,
+        "opacity": 0
+      },
+        1500,
+        function () {
+          $i.remove();
+        });
+    });
+  });
+</script>
+
 
 </html>
