@@ -15,7 +15,7 @@ class index extends Component {
     render() {
         return (
             <div>
-                {this.props.tiger}1231233
+                {this.props.tiger}
             </div>
         );
     }
