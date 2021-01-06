@@ -57,6 +57,7 @@ class index extends Component {
         return (
             <div className="login_box fcc">
                 <div className="login_main">
+
                 </div>
             </div>
         );

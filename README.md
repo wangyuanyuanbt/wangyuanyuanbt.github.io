@@ -74,4 +74,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-https://wangyuanyuanbt.github.io/#/home
+https://wangyuanyuanbt.github.io/build/index.html
